@@ -1,3 +1,7 @@
+#parameters:
+#    cache_adapter: 'cache.adapter.apcu'     #you can invent any keys you want
+
+
 framework:
     secret: '%env(APP_SECRET)%'
     #default_locale: en
