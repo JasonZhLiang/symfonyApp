@@ -1,0 +1,5 @@
+parameters:
+      cache_adapter: cache.adapter.filesystem
+
+
+# this file is teh last one load to configureContainer, so will override any value defined here
