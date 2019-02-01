@@ -28,6 +28,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-markdown-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-time-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/michelf/php-markdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nexylan/slack" />
@@ -82,6 +83,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/profiler-pack" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/templating" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
@@ -134,6 +137,7 @@
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-markdown-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/knplabs/knp-time-bundle" />
           <root url="file://$MODULE_DIR$/vendor/michelf/php-markdown" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/nexylan/slack" />
@@ -188,6 +192,8 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/profiler-pack" />
           <root url="file://$MODULE_DIR$/vendor/symfony/routing" />
           <root url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/templating" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/translation" />
           <root url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />
           <root url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
@@ -224,6 +230,7 @@
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-markdown-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/knplabs/knp-time-bundle" />
           <root url="file://$MODULE_DIR$/vendor/michelf/php-markdown" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/nexylan/slack" />
@@ -278,6 +285,8 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/profiler-pack" />
           <root url="file://$MODULE_DIR$/vendor/symfony/routing" />
           <root url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/templating" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/translation" />
           <root url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />
           <root url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
