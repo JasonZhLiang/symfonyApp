@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -19,22 +20,18 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-    // /**
-    //  * @return Article[] Returns an array of Article objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+//    /**
+//     * @return Article[] Returns an array of Article objects
+//     */
+//    public function findAllPublishedOrderedByNewest()
+//    {
+//        return $this->createQueryBuilder('a')
+//            ->andWhere('a.publishedAt IS NOT NULL OR a.publishedAt > CURRENT_TIMESTAMP()')
+//            ->orderBy('a.publishedAt', 'DESC')
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
 
     /*
     public function findOneBySomeField($value): ?Article
@@ -47,4 +44,31 @@ class ArticleRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * @return Article[] Returns an array of Article objects
+     */
+    public function findAllPublishedOrderedByNewest()
+    {
+//        $qb = $this->createQueryBuilder('a');
+//        return $this->addIsPublishedQueryBuilder($qb)
+            return $this->addIsPublishedQueryBuilder()
+//            ->andWhere('a.publishedAt IS NOT NULL OR a.publishedAt > CURRENT_TIMESTAMP()')
+            ->orderBy('a.publishedAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    private function addIsPublishedQueryBuilder(QueryBuilder $qb = null)
+    {
+//        return $qb->andWhere('a.publishedAt IS NOT NULL OR a.publishedAt > CURRENT_TIMESTAMP()');
+        return $this->getOrCreateQueryBuilder($qb)
+            ->andWhere('a.publishedAt IS NOT NULL OR a.publishedAt > CURRENT_TIMESTAMP()');
+    }
+
+    private function getOrCreateQueryBuilder(QueryBuilder $qb = null)
+    {
+        return $qb ?: $this->createQueryBuilder('a');
+    }
 }
