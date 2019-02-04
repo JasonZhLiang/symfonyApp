@@ -402,7 +402,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548691941793</updated>
-      <workItem from="1548691943214" duration="131609000" />
+      <workItem from="1548691943214" duration="131613000" />
     </task>
     <task id="LOCAL-00001" summary="twig extension add lazy performance for MarkdownHelper Service">
       <created>1549046607096</created>
@@ -453,11 +453,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549316319628</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Timestampable and sluggable of Doctrine extensions, and also Fixtures and Faker for dummy data">
+      <created>1549316325788</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549316325788</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131609000" />
+    <option name="totallyTimeSpent" value="131613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
