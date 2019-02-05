@@ -35,8 +35,8 @@
       <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="168">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding>
                 <element signature="e#30#62#0#PHP" expanded="true" />
               </folding>
@@ -44,11 +44,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Version20190204211418.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Article.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+              <folding>
+                <element signature="e#4312#4369#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Version20190204211418.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190204211418.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="651">
+              <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
               <folding>
                 <marker date="1549314858891" expanded="true" signature="648:913" ph="CREATE TABLE... comment" />
                 <marker date="1549314858891" expanded="true" signature="1229:1247" ph="DROP TABLE c... " />
@@ -277,8 +289,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1872" />
-    <option name="y" value="84" />
+    <option name="x" value="1866" />
+    <option name="y" value="166" />
     <option name="width" value="1481" />
     <option name="height" value="993" />
   </component>
@@ -402,7 +414,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548691941793</updated>
-      <workItem from="1548691943214" duration="131613000" />
+      <workItem from="1548691943214" duration="132829000" />
     </task>
     <task id="LOCAL-00001" summary="twig extension add lazy performance for MarkdownHelper Service">
       <created>1549046607096</created>
@@ -460,11 +472,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549316325788</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Timestampable and sluggable of Doctrine extensions, and also Fixtures and Faker for dummy data">
+      <created>1549316331112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549316331112</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131613000" />
+    <option name="totallyTimeSpent" value="132829000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,14 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -779,7 +790,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#36#79#0#PHP" expanded="true" />
+            <element signature="e#36#79#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,7 +824,7 @@
         <state relative-caret-position="639">
           <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
           <folding>
-            <element signature="e#28#59#0#PHP" expanded="true" />
+            <element signature="e#28#59#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,7 +842,7 @@
         <state relative-caret-position="777">
           <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
           <folding>
-            <element signature="e#32#62#0#PHP" expanded="true" />
+            <element signature="e#32#62#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,7 +852,7 @@
         <state relative-caret-position="1080">
           <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
           <folding>
-            <element signature="e#36#59#0#PHP" expanded="true" />
+            <element signature="e#36#59#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -880,16 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#4312#4369#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -903,7 +904,7 @@
         <state relative-caret-position="618">
           <caret line="32" column="125" lean-forward="false" selection-start-line="32" selection-start-column="125" selection-end-line="32" selection-end-column="125" />
           <folding>
-            <element signature="e#36#59#0#PHP" expanded="true" />
+            <element signature="e#36#59#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -913,7 +914,7 @@
         <state relative-caret-position="294">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
-            <element signature="e#38#81#0#PHP" expanded="true" />
+            <element signature="e#38#81#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -958,23 +959,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190204211418.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding>
+            <marker date="1549314858891" expanded="true" signature="648:913" ph="CREATE TABLE... comment" />
+            <marker date="1549314858891" expanded="true" signature="1229:1247" ph="DROP TABLE c... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="168">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
             <element signature="e#30#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190204211418.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
           <folding>
-            <marker date="1549314858891" expanded="true" signature="648:913" ph="CREATE TABLE... comment" />
-            <marker date="1549314858891" expanded="true" signature="1229:1247" ph="DROP TABLE c... " />
+            <element signature="e#4312#4369#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
