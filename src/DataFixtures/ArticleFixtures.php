@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Article;
 //use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\Comment;
 use Doctrine\Common\Persistence\ObjectManager;
 
 class ArticleFixtures extends BaseFixture
@@ -23,10 +24,12 @@ class ArticleFixtures extends BaseFixture
         'Amy Oort',
     ];
 
-
+// when command doctrine:fixtures:load execute, will look for load() method, since ArticleFixtures class extends BaseFixture, so will execute the load() method which extends from BaseFixture
     protected function loadData(ObjectManager $manager)
     {
-        $this->createMany(Article::class,10,function($article,$count){
+//        $this->createMany(Article::class,10,function($article,$count){//look below add use ($manager) right after function parameters
+        //add Article before $article argument of callback function will let $article explicit what type of it is. then phpstorm can auto-complete when using it.
+        $this->createMany(Article::class,10,function($article, $count) use ($manager){//add the $manager inside the function
 //        for ($i=0; $i<10; $i++) {
 //            $article = new Article();
             $article->setTitle($this->faker->randomElement(self::$articleTitles))
@@ -66,6 +69,24 @@ EOF
                 ->setImageFilename($this->faker->randomElement(self::$articleImages));
 //
 //            $manager->persist($article);
+
+//***************************move comments to a separate fixture class****************************
+//            $comment1 = new Comment();
+//            $comment1->setAuthorName('Mike Ferengi')
+//                ->setContent('I ate a normal rock once. It did NOT taste like bacon!')
+//                ->setArticle($article);
+//            $manager->persist($comment1);
+//
+//            $comment2 = new Comment();
+//            $comment2->setAuthorName($this->faker->name)
+//                ->setContent('Woohoo! I\'m going on an all-asteroid diet!')
+//                ->setArticle($article);
+//            $manager->persist($comment2);
+
+            //the belows codes lives after the call to persist() is fine, just need to come before flush()
+//            $article->addComment($comment1);
+//            $article->addComment($comment2);
+//************************************************************************************************
         });
 
         $manager->flush();

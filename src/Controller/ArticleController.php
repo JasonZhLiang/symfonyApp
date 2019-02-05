@@ -6,6 +6,7 @@ namespace App\Controller;
 //use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\CommentRepository;
 use App\Service\MarkdownHelper;
 //use Michelf\MarkdownInterface;
 use App\Service\SlackClient;
@@ -160,7 +161,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{slug}", name="article_show")
      */
-    public function show(Article $article, SlackClient $slack)
+    public function show(Article $article, SlackClient $slack)//, CommentRepository $commentRepository)
     {
 
         if($article->getSlug() == 'khaaaaaaan'){
@@ -168,15 +169,18 @@ class ArticleController extends AbstractController
         }
 
 
-        $comments =[
-            'I ate a normal rock once. It did NOT taste like bacon!',
-            'Woohoo! I\'m going on an all-asteroid diet!',
-            'I like bacon too! Buy some from my site! bakinsomebacon.com',
-        ];
+//        $comments =[
+//            'I ate a normal rock once. It did NOT taste like bacon!',
+//            'Woohoo! I\'m going on an all-asteroid diet!',
+//            'I like bacon too! Buy some from my site! bakinsomebacon.com',
+//        ];
+
+//        $comments = $commentRepository->findBy(['article' => $article]);
+//        $comments = $article->getComments();//we can call getComments from twig
 
         return $this->render('article/show.html.twig',[
             'article'=>$article,
-            'comments'=>$comments,
+//            'comments'=>$comments,
         ]);
     }
 
