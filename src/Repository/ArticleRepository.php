@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -50,14 +51,26 @@ class ArticleRepository extends ServiceEntityRepository
      */
     public function findAllPublishedOrderedByNewest()
     {
+        //if you want reuse the criteria you already have, just add it to your builder as following two lines code
+//        $this->createQueryBuilder('a')
+//            ->addCriteria(self::createNonDeletedCriteria());
+
 //        $qb = $this->createQueryBuilder('a');
 //        return $this->addIsPublishedQueryBuilder($qb)
-            return $this->addIsPublishedQueryBuilder()
+        return $this->addIsPublishedQueryBuilder()
 //            ->andWhere('a.publishedAt IS NOT NULL OR a.publishedAt > CURRENT_TIMESTAMP()')
-            ->orderBy('a.publishedAt', 'DESC')
-            ->getQuery()
-            ->getResult()
-            ;
+        ->orderBy('a.publishedAt', 'DESC')
+        ->getQuery()
+        ->getResult()
+        ;
+    }
+
+    public static function createNonDeletedCriteria(): Criteria
+    {
+        return Criteria::create()
+            ->andWhere(Criteria::expr()->eq('isDeleted', false))
+            ->orderBy(['createdAt' => 'DESC'])
+        ;
     }
 
     private function addIsPublishedQueryBuilder(QueryBuilder $qb = null)

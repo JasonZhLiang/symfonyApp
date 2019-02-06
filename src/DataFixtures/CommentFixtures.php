@@ -19,6 +19,7 @@ class CommentFixtures extends BaseFixture implements DependentFixtureInterface
             );
             $comment->setAuthorName($this->faker->name);
             $comment->setCreatedAt($this->faker->dateTimeBetween('-1 months', '-1 seconds'));
+            $comment->setIsDeleted($this->faker->boolean(20));
 
 //            $comment->setArticle($this->getReference(Article::class.'_'.$this->faker->numberBetween(0,9)));//when we build articles, call createMany create 10 and addReference 0-9 due to the for loop
 
