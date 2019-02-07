@@ -5,9 +5,11 @@ namespace App\DataFixtures;
 use App\Entity\Article;
 //use Doctrine\Bundle\FixturesBundle\Fixture;
 use App\Entity\Comment;
+use App\Entity\Tag;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class ArticleFixtures extends BaseFixture
+class ArticleFixtures extends BaseFixture implements DependentFixtureInterface
 {
     private static $articleTitles = [
         'Why Asteroids Taste Like Bacon',
@@ -87,8 +89,25 @@ EOF
 //            $article->addComment($comment1);
 //            $article->addComment($comment2);
 //************************************************************************************************
+            /**@var Tag[] $tags */
+            $tags = $this->getRandomReferences(Tag::class, $this->faker->numberBetween(0,5));
+            foreach ($tags as $tag){
+//                $tag->getName();//call this method to let lazy-loading action to load data for tag
+//                dump($tag);
+                $article->addTag($tag);
+            }
+//            die;//in command line run php bin/console doctrine:fixtures:load to test the result
         });
 
         $manager->flush();
     }
+
+    public function getDependencies()
+    {
+        return [
+            TagFixture::class,
+        ];
+    }
+
+
 }

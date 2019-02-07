@@ -59,6 +59,8 @@ class ArticleRepository extends ServiceEntityRepository
 //        return $this->addIsPublishedQueryBuilder($qb)
         return $this->addIsPublishedQueryBuilder()
 //            ->andWhere('a.publishedAt IS NOT NULL OR a.publishedAt > CURRENT_TIMESTAMP()')
+        ->leftJoin('a.tags','t')
+        ->addSelect('t')
         ->orderBy('a.publishedAt', 'DESC')
         ->getQuery()
         ->getResult()
