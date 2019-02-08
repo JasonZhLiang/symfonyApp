@@ -15,10 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CommentAdminController extends AbstractController
 {
-
+//     @IsGranted("ROLE_ADMIN")        //move @IsGranted Annotation from controller to the above class to control the whole class range  methods
     /**
      * @Route("/admin/comment", name="comment_admin")
-//     * @IsGranted("ROLE_ADMIN")        //move @IsGranted Annotation from controller to the above class to control the whole class range  methods
      */
     public function index(CommentRepository $repository, Request $request, PaginatorInterface $paginator)
     {
