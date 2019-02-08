@@ -29,6 +29,6 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {
-        throw new \Exception('will be intercepted before getting here');
+        throw new \Exception('will be intercepted before getting here, CHECK security.yaml file to see what added');
     }
 }

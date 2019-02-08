@@ -4,17 +4,25 @@ namespace App\Controller;
 
 use App\Repository\CommentRepository;
 use Knp\Component\Pager\PaginatorInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
 class CommentAdminController extends AbstractController
 {
+
     /**
      * @Route("/admin/comment", name="comment_admin")
+//     * @IsGranted("ROLE_ADMIN")        //move @IsGranted Annotation from controller to the above class to control the whole class range  methods
      */
     public function index(CommentRepository $repository, Request $request, PaginatorInterface $paginator)
     {
+//        $this->denyAccessUnlessGranted('ROLE_ADMIN'); //better to use it in annotations
         $q = $request->query->get('q');
 //        $comments = $repository->findBy([],['createdAt'=>'DESC']);
 //        $comments = $repository->findAllWithSearch($q);
