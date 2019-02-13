@@ -31,4 +31,12 @@ class SecurityController extends AbstractController
     {
         throw new \Exception('will be intercepted before getting here, CHECK security.yaml file to see what added');
     }
+
+    /**
+     * @Route("/register", name="app_register")
+     */
+    public function register()
+    {
+        return $this->render('security/register.html.twig');
+    }
 }

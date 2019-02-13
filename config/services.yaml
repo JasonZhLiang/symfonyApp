@@ -23,6 +23,8 @@ services:
 #by unindent it at the root of services, it will affect all services in the system. then you can find it debug:autowiring, if beneath bind, will not show
     Nexy\Slack\Client: '@nexy_slack.client'  #you can bind by the argument name or you can bind by a class or interface
 
+    Symfony\Bridge\Twig\Extension\TranslationExtension: '@twig.extension.trans'
+
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
