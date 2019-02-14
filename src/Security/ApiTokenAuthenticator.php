@@ -3,7 +3,7 @@
 namespace App\Security;
 
 use App\Repository\ApiTokenRepository;
-//use Symfony\Bridge\Twig\Extension\TranslationExtension;
+use Symfony\Bridge\Twig\Extension\TranslationExtension;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
