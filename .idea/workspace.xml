@@ -157,6 +157,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="new-master" repo="$PROJECT_DIR$" source="master" />
+    </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -486,7 +489,7 @@
       <updated>1548691941793</updated>
       <workItem from="1548691943214" duration="289652000" />
       <workItem from="1550153649015" duration="8871000" />
-      <workItem from="1550163244864" duration="1348000" />
+      <workItem from="1550163244864" duration="1752000" />
     </task>
     <task id="LOCAL-00001" summary="twig extension add lazy performance for MarkdownHelper Service">
       <created>1549046607096</created>
@@ -656,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550163830315</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="voter">
+      <created>1550164598251</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1550164598251</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299871000" />
+    <option name="totallyTimeSpent" value="300275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
