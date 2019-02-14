@@ -302,6 +302,9 @@
             "ref": "dc3fc2e0334a4137c47cfd5a3ececc601fa61a0b"
         }
     },
+    "symfony/form": {
+        "version": "v4.2.3"
+    },
     "symfony/framework-bundle": {
         "version": "4.2",
         "recipe": {
@@ -318,6 +321,9 @@
         "version": "v4.2.2"
     },
     "symfony/inflector": {
+        "version": "v4.2.3"
+    },
+    "symfony/intl": {
         "version": "v4.2.3"
     },
     "symfony/maker-bundle": {
@@ -346,6 +352,9 @@
     },
     "symfony/orm-pack": {
         "version": "v1.0.6"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.10.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"

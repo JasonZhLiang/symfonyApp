@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Form\ArticleFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use function GuzzleHttp\Psr7\_parse_request_uri;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -58,11 +59,20 @@ class ArticleAdminController extends AbstractController
 //        $em->persist($article);
 //        $em->flush();
         //*****************************move above block to fixtures class************************
-        return new Response(sprintf(
-            'Hiya! New article id: #%d slug: :%s',
-            $article->getId(),
-            $article->getSlug()
-        ));
+
+
+
+
+//        return new Response(sprintf(
+//            'Hiya! New article id: #%d slug: :%s',
+//            $article->getId(),
+//            $article->getSlug()
+//        ));
+
+        $form = $this->createForm(ArticleFormType::class);
+        return $this->render('article_admin/new.html.twig',[
+            'articleForm' => $form->createView(),
+        ]);
     }
 
     /**
