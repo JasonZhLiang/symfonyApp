@@ -1,6 +1,8 @@
 # symfonyApp
 with doctrine
 
+[![Build Status](https://travis-ci.org/KnpLabs/KnpPaginatorBundle.svg?branch=master)](https://travis-ci.org/KnpLabs/KnpPaginatorBundle)
+
 A question appeared on my mind about how interfaces as type hinting service will receive a correct concrete implementation instance in PHP Symfony. 
 
 ### Interfaces
