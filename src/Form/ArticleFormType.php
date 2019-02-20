@@ -34,17 +34,18 @@ class ArticleFormType extends AbstractType
             ->add('publishedAt',null,[
                 'widget' => 'single_text',
             ])//set second argument as null, just tell symfony continue guessing this field type
-            ->add('author', EntityType::class, [
-                'class' => User::class,
-//                'choice_label' => 'email',//see below how to use a callback function to control the display
-                'choice_label' => function(User $user){
-                    return sprintf('(%d) %s', $user->getId(), $user->getEmail());
-                },
-                'placeholder' => 'Choose an author',
-                'choices' => $this->userRepository
-                    ->findAllEmailAlphabetical(),
-                'invalid_message' => 'Symfony is too smart for your hacking'
-            ])
+//            ->add('author', EntityType::class, [
+//                'class' => User::class,
+////                'choice_label' => 'email',//see below how to use a callback function to control the display
+//                'choice_label' => function(User $user){
+//                    return sprintf('(%d) %s', $user->getId(), $user->getEmail());
+//                },
+//                'placeholder' => 'Choose an author',
+//                'choices' => $this->userRepository
+//                    ->findAllEmailAlphabetical(),
+//                'invalid_message' => 'Symfony is too smart for your hacking'
+//            ])
+            ->add('author', UserSelectTextType::class )
         ;//if you do nothing every thing render as text input, once you configure bind the below class, form type guessing system will render them according their type in class
     }
 

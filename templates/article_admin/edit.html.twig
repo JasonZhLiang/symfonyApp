@@ -3,25 +3,27 @@
 {% block content_body %}
     <h1>Edit the Article! 🚀</h1>
 
-    {#{{ form_start(articleForm) }}#}
-    {#{{ form_widget(articleForm) }}#}
+    {#
+    {{ form_start(articleForm) }}
+    {{ form_widget(articleForm) }}
 
-    {#{{ form_row(articleForm.title, {#}
-        {#label: 'Article Title'#}
-    {#}) }}#}
+    {{ form_row(articleForm.title, {
+        label: 'Article Title'
+    }) }}
 
-    {#{{ articleForm.title.vars.id }}#}
-    {#{{ form_label(articleForm.title, 'article title') }}#}
-    {#{{ form_errors(articleForm.title) }}#}
-    {#{{ form_widget(articleForm.title) }}#}
-    {#{{ form_help(articleForm.title) }}#}
+    {{ articleForm.title.vars.id }}
+    {{ form_label(articleForm.title, 'article title') }}
+    {{ form_errors(articleForm.title) }}
+    {{ form_widget(articleForm.title) }}
+    {{ form_help(articleForm.title) }}
 
-    {#{{ form_row(articleForm.content) }}#}
-    {#{{ form_row(articleForm.publishedAt) }}#}
-    {#{{ form_row(articleForm.author) }}#}
+    {{ form_row(articleForm.content) }}
+    {{ form_row(articleForm.publishedAt) }}
+    {{ form_row(articleForm.author) }}
 
-    {#<button type="submit" class="btn btn-primary">Update!</button>#}
-    {#{{ form_end(articleForm) }}#}
+    <button type="submit" class="btn btn-primary">Update!</button>
+    {{ form_end(articleForm) }}
+    #}
 
     {{ include('article_admin/_form.html.twig', {
         button_text: 'Update!'

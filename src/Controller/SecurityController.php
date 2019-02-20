@@ -46,13 +46,19 @@ class SecurityController extends AbstractController
         $form = $this->createForm(UserRegistrationFormType::class);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+//            dd($form['plainPassword']->getData());
             /** @var User $user */
             $user = $form->getData();
 
             $user->setPassword($passwordEncoder->encodePassword(
                 $user,
-                $user->getPassword()
+//                $user->getPassword()//now, this will be empty, since we don't set anything to password field in our form class, we only have plainPassword
+                $form['plainPassword']->getData()
             ));
+
+            if (true === $form['agreeTerms']->getData()){
+                $user->agreeTerms();
+            }
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
@@ -80,6 +86,7 @@ class SecurityController extends AbstractController
 //            $em->flush();
 //
 ////            return $this->redirectToRoute('app_account');
+//            //using below $guardHandler to login the user who just register and redirect the user to previous visit page by using login success method.
 //            return $guardHandler->authenticateUserAndHandleSuccess(
 //                $user,
 //                $request,
