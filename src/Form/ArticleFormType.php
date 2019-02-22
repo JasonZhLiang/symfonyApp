@@ -9,8 +9,12 @@ use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ArticleFormType extends AbstractType
@@ -26,8 +30,13 @@ class ArticleFormType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        /** @var Article|null $article */
         $article = $options['data'] ?? null;
         $isEdit = $article && $article->getId();//to check is $article is not null and has a id with it, just for double ensure new form not pass a template for it.
+
+//comment out $location, since we already add this field inside helper function setupSpecificLocationNameField()
+//        $location = $article ? $article->getLocation() : null;
+
         $builder
             ->add('title', TextType::class,[
                 'help' => 'Choose something catchy!',
@@ -52,13 +61,63 @@ class ArticleFormType extends AbstractType
             ->add('author', UserSelectTextType::class, [
                 'disabled' => $isEdit,
             ])
+            ->add('location', ChoiceType::class, [
+                'placeholder' => 'Choose a location',
+                'choices' => [
+                    'The Solar System' => 'solar_system',
+                    'Near a star' => 'star',
+                    'Interstellar Space' => 'interstellar_space'
+                ],
+                'required' => false,
+            ])
         ;//if you do nothing every thing render as text input, once you configure bind the below class, form type guessing system will render them according their type in class
+
+        //comment out below code, since we already add this field inside helper function setupSpecificLocationNameField()
+//        if ($location){
+//            $builder->add('specificLocationName', ChoiceType::class, [
+//                'placeholder' => 'Where exactly?',
+//                'choices' => $this->getLocationNameChoices($location),
+//                'required' => false,
+//            ]);
+//        }
+
+
 
         if($options['include_published_at']){
             $builder->add('publishedAt',null,[
                 'widget' => 'single_text',
             ]);//set second argument as null, just tell symfony continue guessing this field type
         }
+
+//using below eventlistener to determine if add field specificLocationName,
+        $builder->addEventListener(
+            FormEvents::PRE_SET_DATA,
+            function(FormEvent $event){
+//                dd($event);
+                /** @var Article|null $data */
+                $data = $event->getData();
+                if (!$data){
+                    return;
+                }
+
+                $this->setupSpecificLocationNameField(
+                    $event->getForm(),//this will give entire form, top level form
+                    $data->getLocation()
+                );
+            }
+        );
+
+        $builder->get('location')->addEventListener(
+            FormEvents::POST_SUBMIT,
+            function(FormEvent $event){
+//                dd($event);
+                $form = $event->getForm();//this will give us the actual Form object for this one location field.
+                $this->setupSpecificLocationNameField(
+                    $form->getParent(),//this will give the parent of location object, that will be our form with many fields
+                    $form->getData()
+                );
+            }
+        );
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -67,6 +126,56 @@ class ArticleFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Article::class,
             'include_published_at' => false,
+        ]);
+    }
+
+    private function getLocationNameChoices(string $location)
+    {
+        $planets = [
+            'Mercury',
+            'Venus',
+            'Earth',
+            'Mars',
+            'Jupiter',
+            'Saturn',
+            'Uranus',
+            'Neptune',
+        ];
+        $stars = [
+            'Polaris',
+            'Sirius',
+            'Alpha Centauari A',
+            'Alpha Centauari B',
+            'Betelgeuse',
+            'Rigel',
+            'Other'
+        ];
+        $locationNameChoices = [
+            'solar_system' => array_combine($planets, $planets),
+            'star' => array_combine($stars, $stars),
+            'interstellar_space' => null,
+        ];
+        return $locationNameChoices[$location] ?? null;
+    }
+
+    private function setupSpecificLocationNameField(FormInterface $form, ?string $location)//? means this could be null as well, beside string
+    {
+        if (null === $location){
+            $form->remove('specificLocationName');
+            return;
+        }
+
+        $choices = $this->getLocationNameChoices($location);
+
+        if (null === $choices){//for interstellar space
+            $form->remove('specificLocationName');
+            return;
+        }
+
+        $form->add('specificLocationName', ChoiceType::class, [
+            'placeholder' => 'Where exactly?',
+            'choices' => $choices,
+            'required' => false,
         ]);
     }
 }

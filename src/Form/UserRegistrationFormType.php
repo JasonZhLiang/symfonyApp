@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Form\Model\UserRegistrationFormModel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -25,25 +26,25 @@ class UserRegistrationFormType extends AbstractType
 //            ->add('twitterUsername')
             //we don't want use password property, avoid EVER setting that on a field that might be persisted
             ->add('plainPassword', PasswordType::class,[ //instead of using using null as second argument, we using passwordtype to hide the password when input
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Choose a password'
-                    ]),
-                    new Length([
-                        'min' =>5,
-                        'minMessage' => 'Come on, you can think of a password longer than that!',
-                    ]),
-                ]
+//                'mapped' => false,
+//                'constraints' => [
+//                    new NotBlank([
+//                        'message' => 'Choose a password'
+//                    ]),
+//                    new Length([
+//                        'min' =>5,
+//                        'minMessage' => 'Come on, you can think of a password longer than that!',
+//                    ]),
+//                ]
             ])
 
             ->add('agreeTerms', CheckboxType::class,[
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'I know, It\'s silly, but you must agree to our terms',
-                    ])
-                ]
+//                'mapped' => false,
+//                'constraints' => [
+//                    new IsTrue([
+//                        'message' => 'I know, It\'s silly, but you must agree to our terms',
+//                    ])
+//                ]
             ])
 
         ;
@@ -52,7 +53,8 @@ class UserRegistrationFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+//            'data_class' => User::class,
+            'data_class' => UserRegistrationFormModel::class
         ]);
     }
 }
