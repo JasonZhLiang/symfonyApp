@@ -45,3 +45,10 @@ services:
 #        autowire: false  #you can set this value to false by add this to override the _default value.
 #        arguments:
 #            $logger: '@monolog.logger.markdown'
+
+# for Symfony 4.2, don't need add below code
+#    App\Form\TypeExtension\TextareaSizeExtension:
+#        tags:
+#          - { name: form.type_extension,
+#              extended_type: Symfony\Component\Form\Extension\Core\Type\TextareaType
+#            }
